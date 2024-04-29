@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.h-screen {
+    height: auto;  /* หรือให้มีความสูงที่ต้องการ */
+}
+
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+@media (max-width:1338px) {
+  .grid-cols-4 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width:938px) {
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width:620px) {
+  .grid-cols-4 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+/* เพิ่มขนาดตัวอักษรเมื่อหน้าจอมีความกว้างมากกว่า 768px */
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 16px; /* ตัวอักษรขยายเป็น 16px */
+  }
+}
+
+/* ย่อขนาดตัวอักษรเมื่อหน้าจอมีความกว้างน้อยกว่า 768px */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px; /* ตัวอักษรย่อเป็น 14px */
+  }
+  
+}
+
+/* Add this CSS to your stylesheet */
+.date-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+}
+
+.date-cell {
+  padding: 8px;
+  text-align: center;
+  font-size: 12px;
+  border-top: 1px solid #ddd;
+}
+
+.date-cell.inactive {
+  color: #ccc; /* Color for inactive dates */
+}
+
+.date-cell.weekend {
+  background-color: #f8f8f8; /* Background color for weekends */
+}
+
+.date-cell.holiday {
+  background-color: #ffcccc; /* Background color for holidays */
+}
+
+
